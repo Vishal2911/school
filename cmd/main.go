@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	fmt.Println("Pratyush Running Server......")
+	fmt.Println("Running Server......")
 }
