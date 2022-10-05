@@ -1,4 +1,4 @@
 package model
 
-
-type 
+type Employee struct {
+}
