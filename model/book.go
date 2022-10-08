@@ -1,17 +1,23 @@
 package model
 
-import uuid "github.com/google/uuid"
+import (
+	uuid "github.com/google/uuid"
+	"gorm.io/gorm"
+)
 
 type Book struct {
-	ID        uuid.UUID `json:"id"`
+	gorm.Model
+	ID        uuid.UUID `json:"id" gorm:"primaryKey"`
 	BookName  string    `json:"book_name"`
 	Mrp       int64     `json:"mrp"`
 	Publisher string    `json:"publisher"`
-	Author    Author    `json:"author"`
+	Authors   []Author  `json:"authors" gorm:"many2many:book_author;" `
 }
 
 type Author struct {
-	Name          Name          `json:"name"`
-	Address       Address       `json:"address"`
-	ContactDetail ContactDetail `json:"contact_detail"`
+	gorm.Model
+	ID            uuid.UUID     `json:"id" gorm:"primaryKey"`
+	Name          Name          `json:"name" gorm:"embedded;embeddedPrefix:name_"`
+	Address       Address       `json:"address" gorm:"embedded;embeddedPrefix:address_"`
+	ContactDetail ContactDetail `json:"contact_detail" gorm:"embedded;embeddedPrefix:contact_"`
 }
