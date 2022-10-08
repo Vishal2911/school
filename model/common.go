@@ -23,3 +23,14 @@ type Parents struct {
 	GaurdianName         string `json:"gaurdian_name"`
 	GaurdianRealtionship string `json:"gaurdian_relationship"`
 }
+
+type Duration struct {
+	Start string `json:"start"`
+	End   string `json:"end"`
+}
+
+type ContactDetails struct {
+	Primary   int `json:"primary"`
+	Secondary int `json:"secondary"`
+	Landline  int `json:"landline"`
+}
