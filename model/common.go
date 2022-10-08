@@ -29,7 +29,7 @@ type Duration struct {
 	End   string `json:"end"`
 }
 
-type ContactDetails struct {
+type ContactDetail struct {
 	Primary   int `json:"primary"`
 	Secondary int `json:"secondary"`
 	Landline  int `json:"landline"`

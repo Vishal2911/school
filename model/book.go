@@ -11,7 +11,7 @@ type Book struct {
 }
 
 type Author struct {
-	Name           Name           `json:"name"`
-	Address        Address        `json:"address"`
-	ContactDetails ContactDetails `json:"contact_details"`
+	Name          Name          `json:"name"`
+	Address       Address       `json:"address"`
+	ContactDetail ContactDetail `json:"contact_detail"`
 }
